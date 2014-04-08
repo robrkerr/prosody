@@ -1,0 +1,37 @@
+/* line 1, ../../../../../../Users/robertkerr/Documents/GitHub/wordbeat/css/_base.scss */
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 7, ../../../../../../Users/robertkerr/Documents/GitHub/wordbeat/css/_base.scss */
+body {
+  font: normal 16px Helvetica;
+  background: #efefef;
+}
+/* line 11, ../../../../../../Users/robertkerr/Documents/GitHub/wordbeat/css/_base.scss */
+.breakpoint-mobile body {
+  font: normal 8px Helvetica;
+}
+/* line 14, ../../../../../../Users/robertkerr/Documents/GitHub/wordbeat/css/_base.scss */
+.breakpoint-tablet body {
+  font: normal 10px Helvetica;
+}
+
+/* line 21, ../../../../../../Users/robertkerr/Documents/GitHub/wordbeat/css/_base.scss */
+.breakpoint-desktop .outer-container, .breakpoint-wide .outer-container {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+/* line 27, ../../../../../../Users/robertkerr/Documents/GitHub/wordbeat/css/_base.scss */
+a {
+  text-decoration: underline;
+  color: blue;
+}
+
+/* line 32, ../../../../../../Users/robertkerr/Documents/GitHub/wordbeat/css/_base.scss */
+a:hover {
+  cursor: pointer;
+}
