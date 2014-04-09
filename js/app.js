@@ -28,7 +28,7 @@ app.controller("BodyController", function($scope, $http) {
     }
     return _results;
   };
-  return find_word = function(line, i, word_text) {
+  find_word = function(line, i, word_text) {
     var search_url;
     if (word_text.length === 0) {
       if (i < line.words.length) {
@@ -50,6 +50,18 @@ app.controller("BodyController", function($scope, $http) {
           });
         }
       });
+    }
+  };
+  return $scope.input_keydown = function($event, line_index) {
+    if ($event.keyCode === 13) {
+      return $scope.lines.splice(line_index + 1, 0, {
+        text: "",
+        words: []
+      });
+    } else if ($event.keyCode === 8) {
+      if (($scope.lines[line_index].text.length === 0) && ($scope.lines.length > 1)) {
+        return $scope.lines.splice(line_index, 1);
+      }
     }
   };
 });
