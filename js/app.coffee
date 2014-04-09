@@ -24,10 +24,10 @@ app.controller "BodyController", ($scope,$http) ->
 				line.words = line.words.slice(0,i)
 		else
 			line.words[i] = {text: word_text}
-			search_url = $scope.url + "search/" + word_text + ".json" 
+			search_url = $scope.url + "search/" + word_text.toLowerCase() + ".json" 
 			$http({method: 'GET', url: search_url, cache: true}).then (response) ->
 				if (line.words[i].text == word_text)
-					line.words[i].data = response.data.filter (v) -> v.label == word_text
+					line.words[i].data = response.data.filter (v) -> v.label == word_text.toLowerCase()
 
 	$scope.input_keydown = ($event,line_index) ->
 		if ($event.keyCode == 13)

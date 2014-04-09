@@ -38,7 +38,7 @@ app.controller("BodyController", function($scope, $http) {
       line.words[i] = {
         text: word_text
       };
-      search_url = $scope.url + "search/" + word_text + ".json";
+      search_url = $scope.url + "search/" + word_text.toLowerCase() + ".json";
       return $http({
         method: 'GET',
         url: search_url,
@@ -46,7 +46,7 @@ app.controller("BodyController", function($scope, $http) {
       }).then(function(response) {
         if (line.words[i].text === word_text) {
           return line.words[i].data = response.data.filter(function(v) {
-            return v.label === word_text;
+            return v.label === word_text.toLowerCase();
           });
         }
       });
