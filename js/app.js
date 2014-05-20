@@ -46,7 +46,7 @@ app.controller("BodyController", function($scope, $http) {
       }).then(function(response) {
         if (line.words[i].text === word_text) {
           return line.words[i].data = response.data.filter(function(v) {
-            return v.label === word_text.toLowerCase();
+            return v.spelling === word_text.toLowerCase();
           });
         }
       });

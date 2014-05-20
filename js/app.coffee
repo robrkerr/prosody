@@ -27,7 +27,7 @@ app.controller "BodyController", ($scope,$http) ->
 			search_url = $scope.url + "search/" + word_text.toLowerCase() + ".json" 
 			$http({method: 'GET', url: search_url, cache: true}).then (response) ->
 				if (line.words[i].text == word_text)
-					line.words[i].data = response.data.filter (v) -> v.label == word_text.toLowerCase()
+					line.words[i].data = response.data.filter (v) -> v.spelling == word_text.toLowerCase()
 
 	$scope.input_keydown = ($event,line_index) ->
 		if ($event.keyCode == 13)
@@ -36,9 +36,7 @@ app.controller "BodyController", ($scope,$http) ->
 		 	if ($scope.lines[line_index].text.length == 0) && ($scope.lines.length > 1)
 		 		$scope.lines.splice(line_index,1)
 
-			
-		
-	
+
 	
 
 
